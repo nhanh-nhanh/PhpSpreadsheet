@@ -27,7 +27,7 @@ class ComplexAssert
 
         if (abs($actual) > 10 && abs($expected) > 10) {
             $variance = floor(log10(abs($expected)));
-            $adjustedDelta *= pow(10, $variance);
+            $adjustedDelta *= 10 ** $variance;
         }
 
         return $adjustedDelta > 1.0 ? 1.0 : $adjustedDelta;
@@ -35,7 +35,7 @@ class ComplexAssert
 
     public function assertComplexEquals($expected, $actual, $delta = 0)
     {
-        if ($expected === INF || $expected[0] === '#') {
+        if ($expected === INF || (is_string($expected) && $expected[0] === '#')) {
             return $this->testExpectedExceptions($expected, $actual);
         }
 

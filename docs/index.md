@@ -25,16 +25,14 @@ spreadsheet file formats, like Excel and LibreOffice Calc.
 
 ## Software requirements
 
-The following software is required to develop using PhpSpreadsheet:
-
--   PHP version 5.6 or newer
--   PHP extension php\_zip enabled
--   PHP extension php\_xml enabled
--   PHP extension php\_gd2 enabled (if not compiled in)
+PHP version 7.2 or newer to develop using PhpSpreadsheet. Other requirements, such as PHP extensions, are enforced by
+composer. See the `require` section of [the composer.json file](https://github.com/PHPOffice/PhpSpreadsheet/blob/master/composer.json)
+for details.
 
 ### PHP version support
 
-Support for PHP versions will only be maintained for a period of six months beyond the end-of-life of that PHP version
+Support for PHP versions will only be maintained for a period of six months beyond the
+[end of life of that PHP version](https://www.php.net/eol.php).
 
 ## Installation
 
@@ -43,6 +41,13 @@ Use [composer](https://getcomposer.org) to install PhpSpreadsheet into your proj
 ```sh
 composer require phpoffice/phpspreadsheet
 ```
+
+Or also download the documentation and samples if you plan to use them:
+
+```sh
+composer require phpoffice/phpspreadsheet --prefer-source
+```
+
 
 ## Hello World
 
@@ -66,8 +71,8 @@ $writer->save('hello world.xlsx');
 
 ## Learn by example
 
-A good way to get started is to run some of the samples. Serve the samples via
-PHP built-in webserver:
+A good way to get started is to run some of the samples. Don't forget to download them via `--prefer-source` composer
+flag. And then serve them via PHP built-in webserver:
 
 ```sh
 php -S localhost:8000 -t vendor/phpoffice/phpspreadsheet/samples
@@ -92,7 +97,7 @@ architecture](./topics/architecture.md),
 [accessing cells](./topics/accessing-cells.md) and
 [reading and writing to files](./topics/reading-and-writing-to-file.md).
 
-Or browse the [API documentation](https://phpoffice.github.io/PhpSpreadsheet/master).
+Or browse the [API documentation](https://phpoffice.github.io/PhpSpreadsheet).
 
 # Credits
 
